@@ -1,0 +1,17 @@
+Your query: 
+	"clinical_record_id:28"
+
+Summary info:
+
+By gender
+	female: 1
+
+By age 
+	under 18: 0
+	18-49: 0
+	50-64: 1
+	over 65: 0
+
+By drug resistance
+	sensitive: 1
+

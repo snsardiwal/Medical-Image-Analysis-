@@ -1,0 +1,330 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fol",
+				"folder_path"
+			],
+			[
+				"sav",
+				"save_bone_mask_as_images"
+			],
+			[
+				"dicom",
+				"dicom_slices"
+			],
+			[
+				"mask",
+				"mask_image_path"
+			],
+			[
+				"folder",
+				"folder_path_to_save"
+			],
+			[
+				"folder_path",
+				"folder_path_to_save"
+			],
+			[
+				"conv",
+				"convert_slices_to_preset"
+			],
+			[
+				"pixel",
+				"pixel_array"
+			],
+			[
+				"ext",
+				"extract_dicom_slices_from_folder"
+			],
+			[
+				"dico",
+				"dicom_slices"
+			],
+			[
+				"read_",
+				"read_all_dicom_data"
+			],
+			[
+				"exce",
+				"except_from_start"
+			],
+			[
+				"l",
+				"LabelEncoder"
+			],
+			[
+				"Class",
+				"class_mapping"
+			],
+			[
+				"class",
+				"classlabel"
+			],
+			[
+				"clas",
+				"classlabel"
+			],
+			[
+				"sa",
+				"SafariDriver"
+			],
+			[
+				"c",
+				"ChromeDriver"
+			],
+			[
+				"get",
+				"getpass"
+			],
+			[
+				"Y",
+				"Y_combined"
+			],
+			[
+				"X_",
+				"X_combined"
+			],
+			[
+				"PLOT",
+				"plot_decision_regions"
+			],
+			[
+				"test",
+				"test_idx"
+			],
+			[
+				"te",
+				"test_idx"
+			],
+			[
+				"plot",
+				"plot_decision_regions"
+			],
+			[
+				"accuracy",
+				"accuracy_score"
+			],
+			[
+				"X_test",
+				"X_test_std"
+			],
+			[
+				"error",
+				"errors_"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "packa",
+		"selected_items":
+		[
+			[
+				"packa",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 412.0
+	},
+	"console":
+	{
+		"height": 131.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc/dicom_saving/save_dicoms.py",
+		"/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc/dicom_data_working/tissue_masking.py",
+		"/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc/dicom_data_working/filter_images.py",
+		"/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc/dicom_data_working/convert_dicoms.py",
+		"/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc/dicom_data_working/open_dicoms.py",
+		"/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc/config/dicom_working_config.py",
+		"/Users/sachin/Desktop/Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc/dicom_data_working/open_dicoms.py",
+		"/Users/sachin/Desktop/project me/import.py",
+		"/Users/sachin/Desktop/Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc/read_dicom_files.py",
+		"/Users/sachin/Desktop/Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc/dicom_data_working/convert_dicoms.py",
+		"/Users/sachin/Desktop/ML/dataframe.py",
+		"/Users/sachin/Desktop/ML/wine_data.py",
+		"/Users/sachin/Downloads/machine-learning-ex2/ex2/ex2.m",
+		"/Users/sachin/Downloads/machine-learning-ex2/ex2/costFunction.m",
+		"/Users/sachin/Desktop/ML/xor_nonlin_svm.py",
+		"/Users/sachin/Desktop/ML/fbscript.py",
+		"/Users/sachin/Desktop/ML/KNN.py",
+		"/Users/sachin/Desktop/ML/random_forest.py",
+		"/Users/sachin/Desktop/ML/decisioin_tree.py",
+		"/Users/sachin/Desktop/ML/googlelogin.py",
+		"/Users/sachin/Desktop/ML/svm_sklearn.py",
+		"/Users/sachin/Desktop/ML/logistic_sklearn.py",
+		"/Users/sachin/Desktop/ML/Perceptron_sklearn.py",
+		"/Users/sachin/Desktop/ML/Adaline.py",
+		"/Users/sachin/Desktop/ML/perceptron.py",
+		"/Users/sachin/Desktop/ML/untitled"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 36.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 145.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "README.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 183.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
