@@ -1,0 +1,10 @@
+numpy==1.14.3
+pydicom==0.9.9
+Pillow==5.1.0
+scikit-image==0.13.1
+scikit-learn==0.19.1
+tqdm==4.23.1
+pandas==0.22.0
+matplotlib==2.2.2
+scipy==1.0.1
+jupyter==1.0.0
