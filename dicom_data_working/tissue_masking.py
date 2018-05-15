@@ -43,4 +43,4 @@ folder_path_to_save="/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation
 
 dicom_slices=extract_dicom_slices_from_folder(folder_path,0,0)
 mask=get_bone_mask(dicom_slices)
-save_bone_mask_as_images(mask.astype(np.uint8))
+#save_bone_mask_as_images(mask.astype(np.uint8))
