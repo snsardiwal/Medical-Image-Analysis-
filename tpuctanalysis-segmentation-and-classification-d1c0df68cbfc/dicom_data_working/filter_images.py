@@ -1,16 +1,16 @@
 import numpy as np 
 import scipy.ndimage
 from scipy.misc.pilutil import Image
-from open_dicoms import extract_dicom_slices_from_folder
 
 
 
-image_path="/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc/CT_image/000"
+
+image_path="/Users/sachin/Desktop/CT_Project/masked_dicom_images/000.png"
 a=Image.open(image_path)
 
 k=np.ones((5,5))/25
 
-b=scipy.ndimage.filters.convolve(a,k)
+b=scipy.ndimage.filters.median_filter(a,size=5,footprint=None,output=None,mode='reflect',cval=0.0,origin=0)
 
 b=scipy.misc.toimage(b)
-b.save("/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc/filter")
+b.save("/Users/sachin/Desktop/CT_Project/masked_images_after_filter/000.png")

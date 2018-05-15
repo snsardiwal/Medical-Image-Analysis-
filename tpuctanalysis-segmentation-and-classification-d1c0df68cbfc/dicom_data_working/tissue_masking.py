@@ -39,7 +39,7 @@ def save_bone_mask_as_images(mask):
         mask_image.save(mask_image_path)
 
 folder_path="/Users/sachin/Desktop/CT_Project/datasets/clinical_records_20180205_092007_186/186/CT/20130124"
-folder_path_to_save="/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc/images2"
+folder_path_to_save="/Users/sachin/Desktop/CT_Project/dicom_images_after_masking"
 
 dicom_slices=extract_dicom_slices_from_folder(folder_path,0,0)
 mask=get_bone_mask(dicom_slices)
