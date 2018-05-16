@@ -11,12 +11,6 @@ def crop_image(image_path):
 
 
 folder_path="/Users/sachin/Desktop/CT_Project/masked_dicom_images/patient1/20130124/"
-#file_names=sorted(os.listdir(folder_path))
-#dicom_file_names=[]
-#for fn in file_names:
-#	file_extension=fn.split('.')[-1]
-#	if file_extension in d_opt['extensions']:
-#		dicom_file_names.append(fn)
 
 file_names = sorted(os.listdir(folder_path))
 dicom_file_names = []
