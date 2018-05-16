@@ -3,7 +3,7 @@ import numpy as np
 import os
 import sys
 
-#sys.path.insert(0, "/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc")
+sys.path.insert(0, "/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc")
 
 from config.dicom_working_config import dicom_options as d_opt
 
@@ -27,7 +27,6 @@ def extract_dicom_slices_from_folder(folder_path,
         file_extension = fn.split('.')[-1]
         if file_extension in d_opt['extensions']:
             dicom_file_names.append(fn)
-
     # Load ordered dicom slices
     dicom_data_list = read_all_dicom_data(folder_path, dicom_file_names)
     dicom_slices = __load_all_slices(dicom_data_list)
