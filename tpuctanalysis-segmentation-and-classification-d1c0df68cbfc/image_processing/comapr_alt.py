@@ -58,14 +58,10 @@ def compare(folder_path_1,folder_path_2):
 					for y_center in range(-20,20,5):
 						ipts_translate="/Users/sachin/Desktop/CT_Project/rotated_image/translate.png"
 						translate_image_2=translate(image_path_2,x_center,y_center)
-						translate_image_2.save(ipts_translate)
-						for angle in np.arange(-2.0,2.5,0.5):
-							ipts_rotate="/Users/sachin/Desktop/CT_Project/rotated_image/rotate.png"
-							rotate_image_2=rotate(ipts_translate,angle)
-							rotate_image_2.save(ipts_rotate)
-							percent_diff=compare_images(image_path_1,ipts_rotate)
-							logging.basicConfig(filename='data.log',level=logging.INFO)
-							logging.info('%s, %s, %d, %d ,%f, %f  ',dicom_file_names1[i],dicom_file_names2[ii],x_center,y_center,angle,percent_diff)
+						translate_image_2.save(ipts_translate)	
+						percent_diff=compare_images(image_path_1,ipts_translate)
+						logging.basicConfig(filename='data_alt.log',level=logging.INFO)
+						logging.info('%s, %s, %d, %d , %f  ',dicom_file_names1[i],dicom_file_names2[ii],x_center,y_center,percent_diff)
 			count=count+1
 				
 

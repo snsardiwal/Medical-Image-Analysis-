@@ -9,7 +9,7 @@ def median_filter(image_path,folder_path_to_save):
 	:image_path: path to the image
 	:folder_path_to_save: Path to the folder to save the image
 	"""
-	a=Image.open(image_path)
+	a=Image.open(image_path).convert('L')
 	b=scipy.ndimage.filters.median_filter(a,size=3,footprint=None,output=None,mode='reflect',cval=0.0,origin=0)
 	b=scipy.misc.toimage(b)
 	b.save(folder_path_to_save)
