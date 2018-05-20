@@ -17,6 +17,7 @@ def rotate(image_path,angle):
 	x_sum=0
 	y_sum=0
 	count=0
+	print(image_array.shape)
 	for i in range(image_array.shape[0]):
 		for ii in range(image_array.shape[1]):
 			if image_array[i][ii]==255:
@@ -37,8 +38,8 @@ def translate(image_path,x_shift,y_shift):
 	image=image.transform(image.size,Image.AFFINE,(1,0,x_shift,0,1,y_shift))
 	return image
 
-rotated_image=rotate(image_path,10)
-rotated_image=translate(image_path,0,50)
+#rotated_image=rotate(image_path,10)
+rotated_image=rotate(image_path,50)
 rotated_image.save(folder_path_to_save)
 
 	
