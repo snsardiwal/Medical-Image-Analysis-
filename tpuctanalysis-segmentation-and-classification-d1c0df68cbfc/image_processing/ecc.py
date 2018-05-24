@@ -24,7 +24,7 @@ else :
     warp_matrix = np.eye(2, 3, dtype=np.float32)
 
     # Specify the number of iterations.
-number_of_iterations = 1000;
+number_of_iterations = 5000;
 
     # Specify the threshold of the increment
     # in the correlation coefficient between two iterations
