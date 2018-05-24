@@ -48,8 +48,8 @@ def save_dicom_data(dicom_file_data, file_path_to_save, with_original_meta=True)
                      dicom_file_data,
                      write_like_original=with_original_meta)
 
-folder_path="/Users/sachin/Desktop/CT_Project/datasets/clinical_records_20180205_092007_186/186/CT/20130211"
-folder_path_to_save="/Users/sachin/Desktop/CT_Project/dicom_images/ct/20130211"
+folder_path="/Users/sachin/Desktop/CT_Project/datasets/new/clinical_records_20180410_062505_334/334/CT/20140403"
+folder_path_to_save="/Users/sachin/Desktop/CT_Project/dicom_images/patient9/20140403"
 
 dicom_slices=extract_dicom_slices_from_folder(folder_path,0,0)
 normalized_slices=normalize_slices_for_images(dicom_slices)

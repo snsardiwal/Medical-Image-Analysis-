@@ -5,7 +5,7 @@ import numpy as np
 
 # Read the images to be aligned
 
-im1 =  cv2.imread("/Users/sachin/Desktop/CT_Project/dicom_images/ct/20130124/072.png");
+im1 =  cv2.imread("/Users/sachin/Desktop/CT_Project/bone_mask_after_median_filter/patient2/20110908/072.png");
 im2 =  cv2.imread("/Users/sachin/Desktop/CT_Project/dicom_images/ct/20130211/072.png");
 # Convert images to grayscale
 im1_gray = cv2.cvtColor(im1,cv2.COLOR_BGR2GRAY)
