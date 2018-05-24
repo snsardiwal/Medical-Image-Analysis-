@@ -13,8 +13,8 @@ def compare_images(image_path1,image_path2):
 	"""Compares two images pixel-by-pixel
 		:image_path1:Path to the first image
 		:image_path2:Path to the second image
-		:return: Number of different pixels
-				in two images
+		:return: Negative image andNumber of 
+			different pixels in two images
 	"""
 	#read image1 and image2 and convert them to grayscale	
 	image1=Image.open(image_path1).convert('L')
@@ -63,8 +63,7 @@ def compare_after_transformation(folder_path1,folder_path2):
 	dicom_file_names2=np.array(dicom_file_names2)
 	
 	"""transforms and compares 9 images from folder2 with 
-	   every image in folder1 and prints the manhattan norm
-	   :ipts_translate: Path of image2 after applying transformation
+	   every image in folder1 and calls compare_images function
 	"""
 	
 	for i in range(40,dicom_file_names1.shape[0]):
@@ -76,19 +75,18 @@ def compare_after_transformation(folder_path1,folder_path2):
 				image_path2=os.path.join(folder_path2,dicom_file_names2[ii])
 				for x_center in range(-20,20,5):
 					for y_center in range(-20,20,5):
-						
+						#transformed image saved temporarily
 						ipts_translate="/Users/sachin/Desktop/CT_Project/rotated_image/translate2.png"
 						image2_after_trans=translate(image_path2,x_center,y_center)
 						image2_after_trans.save(ipts_translate)	
 						#compare image1 with transformed image2
 						neg_image,L=compare_images(image_path1,ipts_translate)
-						
+						#save negative images in a folder
 						filename="%s_%s_%s_%s"%(i,ii,x_center,y_center) + ".png"
 						path_to_save="/Users/sachin/Desktop/CT_Project/Neg_images/patient2"
 						neg_image=scipy.misc.toimage(neg_image)
-						#print(filename)
 						neg_image.save(os.path.join(path_to_save,filename))
-						
+						#print results in log file
 						output="%s %s %d %d %d" % (dicom_file_names1[i],dicom_file_names2[ii],x_center,y_center,L)	
 						with open('patient2.log','a') as f:
 							f.write(output)
