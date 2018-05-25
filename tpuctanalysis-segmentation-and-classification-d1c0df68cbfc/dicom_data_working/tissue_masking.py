@@ -39,9 +39,9 @@ def save_bone_mask_as_images(mask):
                                     d_opt['filename_pattern'].format(i))
         mask_image.save(mask_image_path)
 
-folder_path="/Users/sachin/Desktop/CT_Project/datasets/clinical_records_20180207_073213_97/97/CT/20110222"
-folder_path_to_save="/Users/sachin/Desktop/CT_Project/masked_dicom_images/Patient4/20110222"
+folder_path="/Users/sachin/Desktop/CT_Project/datasets/new/clinical_records_20180410_062505_334/334/CT/20140403"
+folder_path_to_save="/Users/sachin/Desktop/CT_Project/bone_mask/Patient9/20140403"
 
-#dicom_slices=extract_dicom_slices_from_folder(folder_path,0,0)
-#mask=get_bone_mask(dicom_slices)
-#save_bone_mask_as_images(mask.astype(np.uint8))
+dicom_slices=extract_dicom_slices_from_folder(folder_path,0,0)
+mask=get_bone_mask(dicom_slices)
+save_bone_mask_as_images(mask.astype(np.uint8))

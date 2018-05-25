@@ -67,32 +67,36 @@ def compare_after_transformation(folder_path1,folder_path2):
 	   :ipts_translate: Path of image2 after applying transformation
 	"""
 	
-	for i in range(40,dicom_file_names1.shape[0]):
+	for i in range(41,42):
 		image_path1=os.path.join(folder_path1,dicom_file_names1[i])
 		count=-4
 		while(count<5):
 			ii=i+count
 			if (ii>=0) and (ii < dicom_file_names2.shape[0]):
 				image_path2=os.path.join(folder_path2,dicom_file_names2[ii])
-				for x_center in range(-20,20,5):
-					for y_center in range(-20,20,5):
+				for x_center in range(-20,25,5):
+					for y_center in range(-20,25,5):
 						
-						ipts_translate="/Users/sachin/Desktop/CT_Project/rotated_image/translate2.png"
+						ipts_translate="/Users/sachin/Desktop/CT_Project/rotated_image/translate.png"
 						image2_after_trans=translate(image_path2,x_center,y_center)
 						image2_after_trans.save(ipts_translate)	
-						#compare image1 with transformed image2
-						neg_image,L=compare_images(image_path1,ipts_translate)
+						for angle in np.arange(-2.0,2.5,0.5):
+							ipts_rotate="/Users/sachin/Desktop/CT_Project/rotated_image/rotate.png"
+							rotate_image2=rotate(ipts_translate,angle)
+							rotate_image2.save(ipts_rotate)
+							#compare image1 with transformed image2
+							neg_image,L=compare_images(image_path1,ipts_rotate)
 						
-						filename="%s_%s_%s_%s"%(i,ii,x_center,y_center) + ".png"
-						path_to_save="/Users/sachin/Desktop/CT_Project/Neg_images/patient2"
-						neg_image=scipy.misc.toimage(neg_image)
-						#print(filename)
-						neg_image.save(os.path.join(path_to_save,filename))
+							filename="%s_%s_%s_%s_%f"%(i,ii,x_center,y_center,angle) + ".png"
+							path_to_save="/Users/sachin/Desktop/CT_Project/Neg_images/patient6"
+							neg_image=scipy.misc.toimage(neg_image)
+							#print(filename)
+							neg_image.save(os.path.join(path_to_save,filename))
 						
-						output="%s %s %d %d %d" % (dicom_file_names1[i],dicom_file_names2[ii],x_center,y_center,L)	
-						with open('patient2.log','a') as f:
-							f.write(output)
-							f.write('\n')
+							output="%s %s %d %d %f %d" % (dicom_file_names1[i],dicom_file_names2[ii],x_center,y_center,angle,L)	
+							with open('patient6.log','a') as f:
+								f.write(output)
+								f.write('\n')
 						
 			count=count+1
 
@@ -110,12 +114,20 @@ def compare_after_transformation(folder_path1,folder_path2):
 
 
 	#main(sys.argv[1],sys.argv[2])
-folder_path1="/Users/sachin/Desktop/CT_Project/bone_mask_after_median_filter/patient2/20110908"
-folder_path2="/Users/sachin/Desktop/CT_Project/bone_mask_after_median_filter/patient2/20111121"
-compare_after_transformation(folder_path1,folder_path2)
+#folder_path1="/Users/sachin/Desktop/CT_Project/bone_mask_after_median_filter/patient6/20121102"
+#folder_path2="/Users/sachin/Desktop/CT_Project/bone_mask_after_median_filter/patient6/20130301"
+#compare_after_transformation(folder_path1,folder_path2)
 
 
+image_path1="/Users/sachin/Desktop/CT_Project/paint_images/077.png"
+image_path2="/Users/sachin/Desktop/CT_Project/paint_images/078.png"
+align_path="/Users/sachin/Desktop/CT_Project/paint_images/aligned.jpg"
 
+bef_align,M=compare_images(image_path1,image_path2)
+af_align,N=compare_images(image_path1,align_path)
 
-
-
+bef_align=scipy.misc.toimage(bef_align)
+bef_align.save("bef_align.png")
+af_align=scipy.misc.toimage(af_align)
+af_align.save("af_align.png")
+print("%d %d" %(M,N))

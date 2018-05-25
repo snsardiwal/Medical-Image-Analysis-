@@ -16,8 +16,8 @@ def median_filter(image_path,folder_path_to_save):
 
 
 
-folder_path="/Users/sachin/Desktop/CT_Project/bone_mask/patient4/20110222"
-folder_path1="/Users/sachin/Desktop/CT_Project/bone_mask_after_median_filter/patient4/20110222"
+folder_path="/Users/sachin/Desktop/CT_Project/bone_mask/patient9/20140403"
+folder_path1="/Users/sachin/Desktop/CT_Project/bone_mask_after_median_filter/patient9/20140403"
 
 #Read file names from folder
 file_names=sorted(os.listdir(folder_path))
