@@ -1,22 +1,23 @@
 import dicom
 import os
 import sys
-
-sys.path.insert(0,"/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc")
-sys.path.insert(0,"/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc/dicom_data_working")
-
 from PIL import Image
+sys.path.insert(0,"/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc")
 from config.dicom_working_config import dicom_options as d_opt
-from feature_extraction import extract_glcm_from_image_array
-from open_dicoms import extract_dicom_slices_from_folder
-from tissue_masking import get_bone_mask
-from convert_dicoms import normalize_slices_for_images
+
+#sys.path.insert(0,"/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc/dicom_data_working")
+#from feature_extraction import extract_glcm_from_image_array
+#from open_dicoms import extract_dicom_slices_from_folder
+#from tissue_masking import get_bone_mask
+#from convert_dicoms import normalize_slices_for_images
+
 def save_slices_as_images(dicom_slices, folder_path_to_save):
     """
     Saves dicom slices pixel data as a set of images in the folder
     :param dicom_slices: ndarray of dicom slices pixel data
     :param folder_path_to_save: Path to the folder to save dicom images
     """
+
     for i in range(dicom_slices.shape[0]):
         ct_image = Image.fromarray(dicom_slices[i])
         ct_image_path = os.path.join(folder_path_to_save,
@@ -48,9 +49,12 @@ def save_dicom_data(dicom_file_data, file_path_to_save, with_original_meta=True)
                      dicom_file_data,
                      write_like_original=with_original_meta)
 
-folder_path="/Users/sachin/Desktop/CT_Project/datasets/new/clinical_records_20180410_062505_334/334/CT/20140403"
-folder_path_to_save="/Users/sachin/Desktop/CT_Project/dicom_images/patient9/20140403"
 
-dicom_slices=extract_dicom_slices_from_folder(folder_path,0,0)
-normalized_slices=normalize_slices_for_images(dicom_slices)
-save_slices_as_images(normalized_slices,folder_path_to_save)
+
+
+    #folder_path="/Users/sachin/Desktop/CT_Project/datasets/new/clinical_records_20180410_062505_334/334/CT/20140403"
+    #folder_path_to_save="/Users/sachin/Desktop/CT_Project/dicom_images/patient9/20140403"
+
+    #dicom_slices=extract_dicom_slices_from_folder(folder_path,0,0)
+    #normalized_slices=normalize_slices_for_images(dicom_slices)
+    #save_slices_as_images(normalized_slices,folder_path_to_save)

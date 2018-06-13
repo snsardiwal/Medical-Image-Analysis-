@@ -4,10 +4,7 @@ import os
 import sys
 
 sys.path.insert(0, "/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc")
-
 from config.dicom_working_config import dicom_options as d_opt
-
-folder_path="/Users/sachin/Desktop/CT_Project/datasets/clinical_records_20180205_092007_186/186/CT/20130124"
 
 def extract_dicom_slices_from_folder(folder_path,
                                      except_from_start=0,

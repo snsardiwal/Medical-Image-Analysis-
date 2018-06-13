@@ -2,14 +2,12 @@ import numpy as np
 import os
 import sys
 import glob
-
-sys.path.insert(0,"/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc/dicom_data_working")
-sys.path.insert(0,"/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc")
-
 from PIL import Image
+
+sys.path.insert(0,"/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc")
 from config import radiology_tissue_options as rt_opt
 from config import dicom_options as d_opt
-from open_dicoms import extract_dicom_slices_from_folder
+
 
 
 def get_bone_mask(dicom_slices):
@@ -26,7 +24,7 @@ def get_bone_mask(dicom_slices):
 
     mask[mask < left] = 0
     mask[mask > right] = 0
-    mask[mask != 0] = 255
+    mask[mask != 0] = 1
 
     return mask
 
@@ -39,9 +37,4 @@ def save_bone_mask_as_images(mask):
                                     d_opt['filename_pattern'].format(i))
         mask_image.save(mask_image_path)
 
-folder_path="/Users/sachin/Desktop/CT_Project/datasets/new/clinical_records_20180410_062505_334/334/CT/20140403"
-folder_path_to_save="/Users/sachin/Desktop/CT_Project/bone_mask/Patient9/20140403"
 
-dicom_slices=extract_dicom_slices_from_folder(folder_path,0,0)
-mask=get_bone_mask(dicom_slices)
-save_bone_mask_as_images(mask.astype(np.uint8))

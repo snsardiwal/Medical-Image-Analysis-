@@ -3,6 +3,10 @@ import numpy as np
 from sklearn.cluster import KMeans
 from skimage import morphology
 from skimage import measure
+import sys
+import cv2
+from PIL import Image
+sys.path.insert(0, "/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc")
 from config import lungs_segmentation as ls_conf
 
 
@@ -56,11 +60,15 @@ def get_lungs_mask_for_slice(slice_array):
     intencity_threshold = np.mean(cluster_centers)
     thresholded_slice = np.where(norm_slice < intencity_threshold, 1.0, 0.0)
 
+    
     # Make erosion and dilation to smooth noises
     ef_size = ls_conf['erosion_filter_size']
     df_size = ls_conf['dilation_filter_size']
     eroded_slice = morphology.erosion(thresholded_slice, np.ones([ef_size, ef_size]))
     dilated_slice = morphology.dilation(eroded_slice, np.ones([df_size, df_size]))
+
+    im=Image.fromarray(dilated_slice*255).convert('L')
+    im.save("011.png")
 
     # Find regions which are fit to the estimated position of lungs
     labels = measure.label(dilated_slice)
@@ -70,8 +78,8 @@ def get_lungs_mask_for_slice(slice_array):
         bbox = prop.bbox
         if bbox[2] - bbox[0] < rows_num / 10 * 9 and \
            bbox[3] - bbox[1] < cols_num / 10 * 9 and \
-           bbox[0] > rows_num / 5 and \
-           bbox[2] < cols_num / 5 * 4:
+           bbox[0] > rows_num / 8 and \
+           bbox[2] < cols_num/9 * 8:
             fit_labels.append(prop.label)
 
     # Creating lungs mask
@@ -82,11 +90,22 @@ def get_lungs_mask_for_slice(slice_array):
     lungs_mask = morphology.dilation(lungs_mask, np.ones([df_size, df_size]))
 
     return lungs_mask
+"""
+image_path = "/Users/sachin/Desktop/CT_Project/images/dicomImages/patient2/time1/befNorm/050.png"
+preset_slice = "/Users/sachin/Desktop/CT_Project/images/dicomImages/patient2/time1/aftNorm/050.png"
 
 
-def main():
-    pass
 
 
-if __name__ == '__main__':
-    main()
+image=cv2.imread(image_path,0)
+image=np.array(image)
+mask=get_lungs_mask_for_slice(image)
+
+preset_slice=cv2.imread(preset_slice,0)
+preset_slice=np.array(preset_slice)
+
+im=(preset_slice*mask).astype(np.uint8)
+im=Image.fromarray(im)
+im.save("008.png")
+"""
+

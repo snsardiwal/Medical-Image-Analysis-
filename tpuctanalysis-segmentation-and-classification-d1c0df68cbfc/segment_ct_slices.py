@@ -1,7 +1,7 @@
 import argparse
 import numpy as np
 
-from dicom_data_working import extract_dicom_slices_from_folder
+from dicom_data_working import extract_dicom_slices_from_folder,normalize_slices_for_images
 from dicom_data_working import convert_slices_to_preset
 from dicom_saving import save_slices_as_images
 from slices_segmentation import get_lungs_masks_for_slices
@@ -25,6 +25,7 @@ def segment_lungs_from_dicoms(folder_path,
     dicom_slices = extract_dicom_slices_from_folder(folder_path,
                                                     except_from_start=except_from_start,
                                                     except_from_end=except_from_end)
+
     # Obtain the mask for lung segments
     lungs_mask = get_lungs_masks_for_slices(dicom_slices)
 
@@ -92,9 +93,13 @@ if __name__ == '__main__':
     )
 
     args = parser.parse_args()
-
-    main(args.dicoms_folder,
+    """
+        main(args.dicoms_folder,
          args.radiology_preset,
          args.start_exc,
          args.end_exc,
          args.output_folder)
+    """
+    folder_path="/Users/sachin/Desktop/CT_Project/datasets/patient7/time1"
+    target_dir="/Users/sachin/Desktop/CT_Project/images/lungMask/patient7/time1a"
+    main(folder_path,'lung', 20, 30,target_dir)

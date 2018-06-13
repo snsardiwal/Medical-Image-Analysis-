@@ -46,7 +46,6 @@ def read_dicoms_to_images(folder_path,
         highlighted_slices = highlight_mask_on_preset_slices(preset_slices, highlighting_masks)
         save_ct_images(highlighted_slices, target_dir)
 
-
 def main(folder_path,
          radiology_preset,
          target_dir,
@@ -129,10 +128,17 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    main(args.dicoms_folder,
-         args.radiology_preset,
-         args.output_folder,
-         args.start_exc,
-         args.end_exc,
-         args.highlight_lungs,
-         args.highlight_bones)
+   # main(args.dicoms_folder,
+    #     args.radiology_preset,
+     #    args.output_folder,
+      #   args.start_exc,
+       #  args.end_exc,
+        # args.highlight_lungs,
+         #args.highlight_bones)
+
+folder_path="/Users/sachin/Desktop/CT_Project/datasets/patient1/time2"
+radiology_preset='lung'
+target_dir="/Users/sachin/Desktop/CT_Project/images/bodyMask/patient1/time2"
+main(folder_path,'lung',
+    target_dir,30,
+    20,0,0)

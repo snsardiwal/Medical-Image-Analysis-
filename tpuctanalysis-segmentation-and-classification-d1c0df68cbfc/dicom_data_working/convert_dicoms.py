@@ -1,10 +1,9 @@
 import numpy as np
 import sys
 
-#sys.path.insert(0, "/Users/sachin/Desktop/CT_Project/tpuctanalysis-segmentation-and-classification-d1c0df68cbfc")
 from config.dicom_working_config import dicom_options as d_opt
 from config.dicom_working_config import radiology_preset_options as rp_opt
-from open_dicoms import extract_dicom_slices_from_folder
+
 
 def convert_slices_to_preset(dicom_slices, preset):
     """
@@ -68,8 +67,4 @@ def normalize_slices_for_images(dicom_slices, min_value=None, max_value=None):
     result_dicom_slices = ((dicom_slices - min_value) / (max_value - min_value)) * 255
 
     return result_dicom_slices.astype(np.uint8)
-#folder_path="/Users/sachin/Desktop/CT_Project/datasets/clinical_records_20180205_092007_186/186/CT/20130124"
-#dicom_slices=extract_dicom_slices_from_folder(folder_path,0,0)
-#x=convert_slices_to_preset(dicom_slices,1)
-#print(x[0])
 
